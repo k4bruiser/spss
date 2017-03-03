@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Components</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Supplier </th>
+      <th>Component</th>
+      <th>Component description</th>
+      <th>Component Type</th>
+      <th>Quantity</th>
+      <th>Cost</th>
+      <th>Retail Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @components.each do |component| %>
+      <tr>
+        <td>
+          <% supplier = Supplier.find(component.supplier_id) %>
+          <%= supplier.company_code %>
+        </td>
+        <td><%= component.component_id %></td>
+        <td><%= component.component_description %></td>
+        <td><%= component.component_type %></td>
+        <td><%= component.quantity %></td>
+        <td><%= component.cost %></td>
+        <td><%= component.retail_price %></td>
+        <td><%= link_to 'Show', component %></td>
+        <td><%= link_to 'Edit', edit_component_path(component) %></td>
+        <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Component', new_component_path %>

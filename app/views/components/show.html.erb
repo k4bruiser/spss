@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @component.supplier_id %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @component.component_id %>
+</p>
+
+<p>
+  <strong>Component description:</strong>
+  <%= @component.component_description %>
+</p>
+
+<p>
+  <strong>Component type:</strong>
+  <%= @component.component_type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @component.quantity %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @component.cost %>
+</p>
+
+<p>
+  <strong>Retail price:</strong>
+  <%= @component.retail_price %>
+</p>
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

@@ -1,0 +1,53 @@
+<%= form_for(component) do |f| %>
+  <% if component.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
+
+      <ul>
+      <% component.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :supplier_id %>
+    <%= f.select :supplier_id, Supplier.all.collect {|s| [s.company_code, s.id]}, include_blank: true %>
+<!--    < f.text_field :supplier_id %>-->
+  </div>
+
+  <div class="field">
+    <%= f.label :component_id %>
+    <%= f.text_field :component_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :component_description %>
+    <%= f.text_field :component_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :component_type %>
+    <%= f.text_field :component_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :retail_price %>
+    <%= f.text_field :retail_price %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
