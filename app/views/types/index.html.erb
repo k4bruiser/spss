@@ -2,7 +2,7 @@
 
 <h1>Types</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>User type</th>
@@ -16,9 +16,11 @@
       <tr>
         <td><%= type.user_type %></td>
         <td><%= type.user_description %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', type %>
+          <%= link_to 'Edit', edit_type_path(type) %>
+          <%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
