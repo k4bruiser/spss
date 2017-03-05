@@ -20,18 +20,8 @@
         <td><%= user.user_name %></td>
         <td><%= user.password %></td>
         <td>
-          <% if user.user_type == "DBA" then %>
-            Database Administrator
-          <% elsif user.user_type == "MAN" then %>
-            Manager
-          <% elsif user.user_type == "TEC" then %>
-            Technician
-          <% elsif user.user_type == "EMP" then %>
-            Employee
-          <% else %>
-            Dummy User
-          <% end %>
-          
+          <% utype = Type.find(user.user_type) %>
+          <%= utype.user_description %>
         </td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

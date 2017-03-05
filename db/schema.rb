@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302075147) do
+ActiveRecord::Schema.define(version: 20170305133625) do
 
   create_table "components", force: :cascade do |t|
     t.string   "component_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170302075147) do
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
     t.string   "password"
-    t.string   "user_type"
+    t.integer  "user_type"
     t.string   "last_name"
     t.string   "first_name"
     t.string   "middle_name"

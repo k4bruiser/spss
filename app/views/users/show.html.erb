@@ -17,17 +17,8 @@
 
 <p>
   <strong>User type:</strong>
-  <% if @user.user_type == "DBA" then %>
-    Database Administrator
-  <% elsif @user.user_type == "MAN" then %>
-    Manager
-  <% elsif @user.user_type == "TEC" then %>
-    Technician
-  <% elsif @user.user_type == "EMP" then %>
-    Employee
-  <% else%>
-    Dummy User
-  <% end %>
+  <% utype = Type.find(@user.user_type) %>
+  <%= utype.user_description %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
